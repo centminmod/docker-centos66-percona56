@@ -1,9 +1,6 @@
 #/bin/bash
 /etc/init.d/mysql start
 
-/usr/bin/mysql -e "INSTALL SONAME 'metadata_lock_info';"
-/usr/bin/mysql -e "INSTALL SONAME 'query_cache_info';"
-/usr/bin/mysql -e "INSTALL SONAME 'query_response_time';"
 /usr/bin/mysql -t -e "SELECT * FROM mysql.plugin;"
 /usr/bin/mysql -t -e "SHOW PLUGINS;"
 /usr/bin/mysql -t -e "SHOW ENGINES;"
