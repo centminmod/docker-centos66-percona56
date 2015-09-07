@@ -1,4 +1,4 @@
-Percona 5.6.x on CentOS 6.6 64bit Docker container build intended for use with [CentminMod.com LEMP stack](http://centminmod.com). 
+Percona 5.6.x on CentOS 6.7 64bit Docker container build intended for use with [CentminMod.com LEMP stack](http://centminmod.com). 
 
 ### My Docker Hub repo
 

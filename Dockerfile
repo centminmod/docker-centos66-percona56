@@ -1,7 +1,7 @@
-FROM centos:6.6
+FROM centos:6.7
 MAINTAINER George Liu <https://github.com/centminmod/docker-centos66-percona56>
-# Setup Percona 5.6 on CentOS 6.6
-RUN rpm -Uhv http://www.percona.com/downloads/percona-release/percona-release-0.0-1.x86_64.rpm; yum -y install epel-release nano which inotify-tools perl-DBI python-setuptools && rm -rf /var/cache/*; echo "" > /var/log/yum.log && easy_install pip && easy_install supervisor && easy_install supervisor-stdout
+# Setup Percona 5.6 on CentOS 6.7
+RUN rpm -Uhv http://www.percona.com/downloads/percona-release/percona-release-0.0-1.x86_64.rpm; yum -y install epel-release nano which inotify-tools perl-DBI python-setuptools && yum -y install python-meld3 && rm -rf /var/cache/*; echo "" > /var/log/yum.log && easy_install pip && easy_install supervisor && easy_install supervisor-stdout
 ADD supervisord.conf /etc/supervisord.conf
 ADD supervisord_init /etc/rc.d/init.d/supervisord
 RUN chmod +x /etc/rc.d/init.d/supervisord && mkdir -p /etc/supervisord.d/ && touch /var/log/supervisord.log && chmod 0666 /var/log/supervisord.log
